@@ -13,11 +13,12 @@ import java.util.List;
 public interface FolhaPagamentoRepository extends JpaRepository<FolhaPagamento,Long> {
 
     @Query(nativeQuery = true, value = """
-            SELECT teste.tbfolhapagamento.id, teste.tbfolhapagamento.salario_base, teste.tbfolhapagamento.bonus,teste.tbfolhapagamento.descontos,
-             teste.tbfolhapagamento.funcionario_id
-              FROM teste.tbfolhapagamento
-            JOIN teste.tbfuncionario ON teste.tbfolhapagamento.funcionario_id = teste.tbfuncionario.id
-            WHERE UPPER(teste.tbfuncionario.cargo) = UPPER(:cargo)""")
+            SELECT oasis.tbfolhapagamento.id, oasis.tbfolhapagamento.salario, oasis.tbfolhapagamento.bonus,oasis.tbfolhapagamento.descontos,
+             oasis.tbfolhapagamento.funcionario_id
+              FROM oasis.tbfolhapagamento
+            JOIN oasis.tbfuncionario ON oasis.tbfolhapagamento.funcionario_id = oasis.tbfuncionario.id
+            WHERE UPPER(oasis.tbfuncionario.cargo) = UPPER(:cargo)""")
 
     List<FolhaPagamento>findByCargo(@Param("cargo")String cargo);
 }
+

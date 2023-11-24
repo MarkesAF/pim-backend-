@@ -6,21 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "tbfolhapagamento",schema = "teste")
+@Table(name = "tbfolhapagamento",schema = "oasis")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class FolhaPagamento {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "salario_base")
+    @Column(name = "salario")
     private Double salario;
-
     private Double descontos;
-
     private Double bonus;
-
     @OneToOne
     @JoinColumn(name = "funcionario_id",referencedColumnName = "id")
     private Funcionario funcionario;
