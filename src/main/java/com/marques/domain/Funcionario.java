@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Funcionario {
+    //Classe de entidade, que contem os atributos que representam as colunas no banco de dados.
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

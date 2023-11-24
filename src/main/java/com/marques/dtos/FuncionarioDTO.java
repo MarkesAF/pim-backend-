@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FuncionarioDTO{
 
+    // OS DTOs SAO CLASSES QUASE IGUAIS AS DE ENTIDADES,
+    // POREM NELA ESTA SOMENTE OS ATRIBUTOS QUE VOCE QUEIRA RETORNAR AO INVES DE RETORNAR TODOS
+
     private Long id;
     private String cargo;
     private String nome ;
